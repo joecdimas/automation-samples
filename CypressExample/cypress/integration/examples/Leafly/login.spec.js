@@ -20,6 +20,22 @@ context('Login to the Leafly Homepage',() => {
     cy.get('button.block.relative.mr-md').click();
     //Strains Link
     cy.get('li.nav__strains').click();
+
+  })
+  it('Goes to the Northern Lights strain', ()=> {
+    //this is theoretical:
+    cy.get('[data-test-id="NorthernLights"]').click()
+    cy.screenshot();
+
+    /*we take a screenshot. This can ensure that we have the correct image and link. We could also do something like this: */
+    
+    cy.screenshot({ x: 20, y: 20, width: 400, height: 300 })
+    
+    /*which takes a screenshot of the strainpicture
+    we could even make  sure that  the strains  are the right color or shapes:*/
+
+    cy.get('.NortherLights').should('have.css', 'color', 'rgb(217,217,217)')
+
   })
 
 })
